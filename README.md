@@ -29,6 +29,9 @@ pip install biopython fastapi uvicorn requests
 ## Installation
 
 1. Clone the repository
+```bash
+https://github.com/JackKuo666/PubMed-Search-API-Python.git
+```
 2. Install dependencies:
 ```bash
 pip install -r requirements.txt
