@@ -52,7 +52,7 @@ main.py 文件中定义了 FastAPI 应用的基本路由。
 ```bash
 uvicorn main:app --reload
 ```
-这将启动一个本地服务器，默认地址为 http://127.0.0.1:8000。
+这将启动一个本地服务器，默认地址为 http://127.0.0.1:8001。
 
 ### 2. 使用客户端测试搜索功能
 在 client.py 文件中，test_client 函数用于测试搜索功能。你可以根据需要修改 term、db 和 retmax 参数。
