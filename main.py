@@ -9,10 +9,10 @@ async def root():
     return {"message": "Welcome to the PubMed Search API"}
 
 @app.get("/search/")
-async def search(term: str = Query(..., description="Search term"), 
-                 db: str = Query("pubmed", description="Database to search"),
-                 retmax: int = Query(20, description="Maximum number of results to return")):
-    results = search_database(term, db, retmax)
+async def search(query: str = Query(..., description="Search term"), 
+                 num_to_show: int = Query(20, description="Maximum number of results to return"),
+                 db: str = Query("pubmed", description="Database to search")):
+    results = search_database(term=query, db=db, retmax=num_to_show)
     return {"results": results}
 
 if __name__ == "__main__":

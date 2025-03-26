@@ -1,16 +1,16 @@
 import requests
 import json
 
-def test_client(term: str, db: str = "pubmed", retmax: int = 10):
+def test_client(query: str, num_to_show: int = 10, db: str = "pubmed"):
     """
     Test client for the FastAPI PubMed search service
     """
     try:
         # Set up the request parameters
         params = {
-            "term": term,
-            "db": db,
-            "retmax": retmax
+            "query": query,
+            "num_to_show": num_to_show,
+            "db": db
         }
         
         # Make the GET request
@@ -33,9 +33,8 @@ def test_client(term: str, db: str = "pubmed", retmax: int = 10):
 
 if __name__ == "__main__":
     # Get user input
-    term = "DNA sequencing"
-    db = "pubmed"
-    retmax = 3
+    query = "DNA sequencing"
+    num_to_show = 3
     
     # Run the test client
-    test_client(term, db, retmax)
+    test_client(query, num_to_show)
