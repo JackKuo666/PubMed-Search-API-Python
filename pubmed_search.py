@@ -37,7 +37,7 @@ def parse_pubmed_xml(xml_data):
         # 提取文章信息
         article_title = article.find(".//ArticleTitle").text if article.find(".//ArticleTitle") is not None else ""
         doi = article.find(".//ELocationID[@EIdType='doi']").text if article.find(".//ELocationID[@EIdType='doi']") is not None else ""
-        print("doi", doi)
+        pmid = article.find(".//ArticleId[@IdType='pubmed']").text if article.find(".//ArticleId[@IdType='pubmed']") is not None else ""
         abstract_texts = article.findall(".//AbstractText")
         abstract_text = " ".join([abstract.text if abstract.text is not None else "" for abstract in abstract_texts]) if abstract_texts else ""
 
@@ -52,6 +52,7 @@ def parse_pubmed_xml(xml_data):
         articles.append({
             "title": article_title,
             "doi": doi,
+            "pmid": pmid,
             "abstract": abstract_text,
             "authors": ", ".join(authors)
         })
