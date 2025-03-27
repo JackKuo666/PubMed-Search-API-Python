@@ -2,7 +2,7 @@ from Bio import Entrez
 import json
 
 # 设置电子邮件（NCBI 要求）
-Entrez.email = "your_email@example.com"
+Entrez.email = "email@gmail.com"
 
 # 1. 搜索数据库（ESearch）
 def search_database(term, db="pubmed", retmax=10):
@@ -37,8 +37,10 @@ def parse_pubmed_xml(xml_data):
         # 提取文章信息
         article_title = article.find(".//ArticleTitle").text if article.find(".//ArticleTitle") is not None else ""
         doi = article.find(".//ELocationID[@EIdType='doi']").text if article.find(".//ELocationID[@EIdType='doi']") is not None else ""
-        abstract_text = " ".join([abstract.text for abstract in article.findall(".//AbstractText")]) if article.findall(".//AbstractText") else ""
-        
+        print("doi", doi)
+        abstract_texts = article.findall(".//AbstractText")
+        abstract_text = " ".join([abstract.text if abstract.text is not None else "" for abstract in abstract_texts]) if abstract_texts else ""
+
         # 提取作者信息
         authors = []
         for author in article.findall(".//Author"):
@@ -55,7 +57,6 @@ def parse_pubmed_xml(xml_data):
         })
 
     return articles
-
 
 # 示例：搜索并获取记录
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ def test_client(query: str, num_to_show: int = 10, db: str = "pubmed"):
         # Make the GET request
         response = requests.get(
             "http://localhost:8001/search/",
+            # "http://10.15.56.148:8001/search/",
             params=params
         )
         
