@@ -64,3 +64,12 @@ if __name__ == "__main__":
     # 搜索包含 "breast cancer" 的文章
     search_results = search_database("DNA sequencing", db="pubmed", retmax=5)
     print("search_results", search_results)
+    query = '''
+("Alzheimer Disease"[MeSH Terms] OR "Dementia"[MeSH Terms] OR "alzheimer*"[Title/Abstract] OR "dementia*"[Title/Abstract] OR "cognitive*"[Title/Abstract] OR "cognition*"[Title/Abstract]) 
+AND 
+(("Built Environment"[MeSH] OR "Built Environment"[Title/Abstract] OR landscape*[Title/Abstract] OR greenspace[Title/Abstract] OR "green space"[Title/Abstract] OR greenness[Title/Abstract] OR forest*[Title/Abstract] OR park*[Title/Abstract] OR greenway[Title/Abstract] OR outdoor*[Title/Abstract] OR walkabilit*[Title/Abstract] OR street[Title/Abstract] OR roadway[Title/Abstract] OR residen*[Title/Abstract] OR neighborhood*[Title/Abstract] OR neighbourhood*[Title/Abstract])) 
+AND 
+(("street view" OR streetview OR satellite* OR GIS OR "geographic information system*" OR "remote sensing" OR ArcGIS OR postal-code* OR zipcode* OR "postal code*" OR "zip code*" OR zip-code*))
+'''
+    search_results = search_database(query, db="pubmed", retmax=5)
+    print("search_results", search_results)
