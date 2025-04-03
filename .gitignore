@@ -1,3 +1,5 @@
 metadata/pubmed_metadata/*
 metadata/upload_huggingface.py
+metadata/log_upload_huggingface.py.txt
+metadata/upload.sh
 log_main.py.txt

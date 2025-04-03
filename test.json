@@ -1,0 +1,10 @@
+{
+    "my_dataset": {
+      "default_viewer_file": "2025/meta_info_2025_0327_part1.csv",
+      "splits": {
+        "2025_part1": {"file_name": "2025/meta_info_2025_0327_part1.csv"},
+        "2025_part2": {"file_name": "2025/meta_info_2025_0327_part2.csv"},
+        "2023_meta": {"file_name": "2023/meta.jsonl"}
+      }
+    }
+}

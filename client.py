@@ -1,7 +1,7 @@
 import requests
 import json
 
-def test_client(query: str, num_to_show: int = 10, db: str = "pubmed"):
+def test_client(query: str, num_to_show: int = 10, search_type: str = "keyword", db: str = "pubmed"):
     """
     Test client for the FastAPI PubMed search service
     """
@@ -10,13 +10,14 @@ def test_client(query: str, num_to_show: int = 10, db: str = "pubmed"):
         params = {
             "query": query,
             "num_to_show": num_to_show,
+            "search_type": search_type,
             "db": db
         }
         
         # Make the GET request
         response = requests.get(
-            "http://localhost:8001/search/",
-            # "http://10.15.56.148:8001/search/",
+            # "http://localhost:8001/search/",
+            "http://10.15.56.148:8001/search/",
             params=params
         )
         
@@ -38,7 +39,7 @@ if __name__ == "__main__":
     num_to_show = 3
     
     # Run the test client
-    test_client(query, num_to_show)
+    test_client(query, num_to_show, search_type="keyword", db="pubmed")
 
     # advanced query
     query2 = '''
@@ -48,4 +49,4 @@ AND
 AND 
 (("street view" OR streetview OR satellite* OR GIS OR "geographic information system*" OR "remote sensing" OR ArcGIS OR postal-code* OR zipcode* OR "postal code*" OR "zip code*" OR zip-code*))
 '''
-    test_client(query2, num_to_show)
+    test_client(query2, num_to_show, search_type="advanced", db="pubmed")
