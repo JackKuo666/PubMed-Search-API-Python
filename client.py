@@ -41,12 +41,12 @@ if __name__ == "__main__":
     # Run the test client
     test_client(query, num_to_show, search_type="keyword", db="pubmed")
 
-    # advanced query
-    query2 = '''
-("Alzheimer Disease"[MeSH Terms] OR "Dementia"[MeSH Terms] OR "alzheimer*"[Title/Abstract] OR "dementia*"[Title/Abstract] OR "cognitive*"[Title/Abstract] OR "cognition*"[Title/Abstract]) 
-AND 
-(("Built Environment"[MeSH] OR "Built Environment"[Title/Abstract] OR landscape*[Title/Abstract] OR greenspace[Title/Abstract] OR "green space"[Title/Abstract] OR greenness[Title/Abstract] OR forest*[Title/Abstract] OR park*[Title/Abstract] OR greenway[Title/Abstract] OR outdoor*[Title/Abstract] OR walkabilit*[Title/Abstract] OR street[Title/Abstract] OR roadway[Title/Abstract] OR residen*[Title/Abstract] OR neighborhood*[Title/Abstract] OR neighbourhood*[Title/Abstract])) 
-AND 
-(("street view" OR streetview OR satellite* OR GIS OR "geographic information system*" OR "remote sensing" OR ArcGIS OR postal-code* OR zipcode* OR "postal code*" OR "zip code*" OR zip-code*))
-'''
-    test_client(query2, num_to_show, search_type="advanced", db="pubmed")
+#     # advanced query
+#     query2 = '''
+# ("Alzheimer Disease"[MeSH Terms] OR "Dementia"[MeSH Terms] OR "alzheimer*"[Title/Abstract] OR "dementia*"[Title/Abstract] OR "cognitive*"[Title/Abstract] OR "cognition*"[Title/Abstract]) 
+# AND 
+# (("Built Environment"[MeSH] OR "Built Environment"[Title/Abstract] OR landscape*[Title/Abstract] OR greenspace[Title/Abstract] OR "green space"[Title/Abstract] OR greenness[Title/Abstract] OR forest*[Title/Abstract] OR park*[Title/Abstract] OR greenway[Title/Abstract] OR outdoor*[Title/Abstract] OR walkabilit*[Title/Abstract] OR street[Title/Abstract] OR roadway[Title/Abstract] OR residen*[Title/Abstract] OR neighborhood*[Title/Abstract] OR neighbourhood*[Title/Abstract])) 
+# AND 
+# (("street view" OR streetview OR satellite* OR GIS OR "geographic information system*" OR "remote sensing" OR ArcGIS OR postal-code* OR zipcode* OR "postal code*" OR "zip code*" OR zip-code*))
+# '''
+#     test_client(query2, num_to_show, search_type="advanced", db="pubmed")
